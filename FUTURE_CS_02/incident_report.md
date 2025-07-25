@@ -41,12 +41,16 @@ The goal was to detect, analyze, and respond to simulated security incidents usi
 ## 5. Splunk Dashboard & Threat Analysis
 
 1. Dashboard Screenshot Placeholder
-   [View Splunk Dashboard]()
+   [View Splunk Dashboard](https://github.com/cyber-agentberry/FUTURE_INTERN/blob/main/FUTURE_CS_02/Images/Dashboard_screenshot.png)
 
 **The dashboard highlighted**:
 - Repeated failed login attempts from specific IPs
 - Detection of malware like ransomware and trojans
 - High-frequency outbound traffic from internal systems
+
+2. [View VirusTotal PDF report for IP 198.51.100.42](https://drive.google.com/file/d/1daV-bAX2dt03L4WjtzHqphHdQfCF4-0J/view?usp=share_link)
+   [View VirusTotal PDF report for IP 203.0.113.77](https://drive.google.com/file/d/1NBdL31Hb0JC27xGmEXjZvxrBZfgSbFYG/view?usp=share_link)
+
 
   
 ## 6. Findings
