@@ -41,7 +41,7 @@ The goal was to detect, analyze, and respond to simulated security incidents usi
 ## 5. Splunk Dashboard & Threat Analysis
 
 1. Dashboard Screenshot Placeholder
-![Splunk Dashboard](images/dashboard_screenshot.png)
+   [View Splunk Dashboard]()
 
 **The dashboard highlighted**:
 - Repeated failed login attempts from specific IPs
