@@ -58,9 +58,6 @@ Switching back to ZAP, it was confirmed that the interception was working proper
 •	The Sites panel populated with the DVWA domain and its internal structure (e.g., login page, vulnerabilities, etc.).  
 The DVWA Security level was set to low and an active scan was carried out.  
   
-   
-[Figure 1: A Screenshot of Zap Interface showing the DVWA Scan Result](https://github.com/cyber-agentberry/FUTURE_INTERN/blob/d4082f04a7c5eab4f9a1de4080e7b6ef2abb21c8/FUTURE_CS_01/Images/DvwaScan.png)
-  
 
 ## Vulnerability Analysis: Reflected Cross-Site Scripting (XSS)  
 Description:  
@@ -68,8 +65,6 @@ Reflected Cross-Site Scripting (XSS) is a web application vulnerability that occ
 Execution Process:  
 The payload was injected into the input field (e.g., “Message” or “Name”). o Upon submission, the payload was reflected in the web page’s HTML response without any sanitization or encoding. o The JavaScript alert executed as soon as the page loaded.  
   
-   
-Figure 2: A Screenshot Showing XSS_r interface with the payload Result
 
 ## Result:
 - Upon execution of the code, there was an ‘Hello’ message.
@@ -86,8 +81,6 @@ o	The payload was submitted in the Message and Name field of the form. o The scr
 2.	Execution/Trigger:  
 o	After submitting the form, the page displayed the stored message along with the injected script. o The JavaScript executed immediately in the browser, triggering an alert() popup.  
   
-   
-Figure 3: A screenshot of XSS_s showing the pop-up and the injected payload  
   
 ## Result:  
 •	Upon viewing the page after the injection: A pop-up box appeared with the message XSS, confirming that the script ran in the browser context.  
@@ -111,8 +104,7 @@ SQL Injection (SQLi) is a common web application vulnerability that occurs when 
 ## Methodology:  
 In the User ID input field, this payload was used:  
 ‘OR’ 1=1 –   
-   
-Figure 4: SQL Interface showing all Users records from the database  
+     
 ## Impact:  
 •	Unauthorized access to all usernames and data.  
 •	Potential for database dumping, credential theft, and privilege escalation.  
@@ -143,20 +135,17 @@ Blind SQL Injection occurs when an application processes SQL queries based on us
 1' AND 1=1 –   
           1' AND 1=2 --   
 'OR' 1=1 --    
-2.	Execution Process:  
-o	Payloads were injected into the input field expecting a user ID, if the payload returned a result (e.g., 1' AND 1=1 --), it confirmed that the SQL query was valid , but if no result was returned (e.g., 1' AND 1=2 --), it confirmed the query evaluated to false.  
-o	This behavior confirmed a boolean-based blind SQL injection vulnerability.  
-   
-Figure 5: A Screenshot of SQLi blind interface, showing the users record via  
- ‘OR’ 1=1 -- payload  
-
-   
+2.	Execution Process:
+-  Payloads were injected into the input field expecting a user ID, if the payload returned a result (e.g., 1' AND 1=1 --), it confirmed that the SQL query was valid , but if no result was returned (e.g., 1' AND 1=2 --), it confirmed the query evaluated to false.
+- This behavior confirmed a boolean-based blind SQL injection vulnerability.  
  
-Figure 6: A Screenshot of SQLi blind interface, showing the users record via 1’ AND 1=1 -- payload  
   
-## Result: o Application responses varied depending on logical conditions. o Although no data was directly visible, the backend logic could be manipulated.  
-o	This allowed the inference of database structure and behavior.  
- Impact:  
+## Result: 
+- Application responses varied depending on logical conditions.
+- Although no data was directly visible, the backend logic could be manipulated.  
+- This allowed the inference of database structure and behavior.
+  
+## Impact:  
 •	Information Disclosure: Attackers can extract sensitive information by exploiting query logic.  
 •	Authentication Bypass: If used on login fields, it may lead to unauthorized access.  
 •	Database Enumeration: Slowly determine table names, columns, and data values.  
@@ -175,19 +164,15 @@ Description:
 Cross-Site Request Forgery is a type of attack where a malicious site causes a user’s browser to perform an unwanted action on a different site where the user is authenticated. DVWA (Damn Vulnerable Web Application) was used to simulate this vulnerability.  
   
 ## Methodology  
-1.	Preparation:  
-o	A malicious HTML form containing hidden fields to change the victim's password was created (Attacker)  
-o	The form was hosted on a simple Python HTTP server(python3 -m http.server 8000)  
-
-
-
-2.	Attack Code (Malicious Form):  
+1.	Preparation:
+- A malicious HTML form containing hidden fields to change the victim's password was created (Attacker)  
+-	The form was hosted on a simple Python HTTP server(python3 -m http.server 8000)  
+  
  
-   
-Figure 7: the Malicious HTML Form   
- 
-3.	Execution:  
-o	Victim was authenticated in DVWA in the same browser.  o Victim visited the attacker’s page and clicked the form button. o Without user interaction or consent, the password on DVWA was changed to hacked.  
+## 3.	Execution:  
+- Victim was authenticated in DVWA in the same browser.
+- Victim visited the attacker’s page and clicked the form button.
+- Without user interaction or consent, the password on DVWA was changed to hacked.  
    
   	  
 ## 4.	Result:  
@@ -219,14 +204,6 @@ o Positions: The Intruder's "Positions" tab was used to define the attack points
 5.	Running the Attack: The attack was launched from the Intruder interface. Burp Suite automatically iterated through the payload lists, sending a series of HTTP POST requests to the DVWA server with different username and password combinations.  
 6.	Analysis: The results of each request were monitored in the Intruder's "Results" tab. The analysis focused on the HTTP status codes and the response lengths of each request. A successful login attempt typically resulted in a different HTTP status code (e.g., a 302 Found redirect to the user's home page) or a unique response content length compared to failed login attempts. This deviation was a clear indicator of a successful credential guess.  
   
-   
-Figure 8: A screenshot of the POST Request interception  
-  
-   
-Figure 9: A view of the intruder interface showing the highlighted payload  
-position  	  
-   
-Figure 10: A Screenshot of the intruder’s Result tab  
   
 ## 7.	Findings & Observations  
 •	Vulnerability: The DVWA login form is highly susceptible to brute-force attacks due to the lack of effective security measures.  
@@ -253,4 +230,4 @@ The vulnerability assessment of the Damn Vulnerable Web Application (DVWA) at a 
 The findings highlight a direct correlation between weak security implementation and the ease of exploitation. The application's failure to sanitize user input, implement secure query practices, validate session tokens, or enforce rate limiting mechanisms made it trivial to compromise.  
 In summary, the DVWA platform, under its low-security configuration, is highly vulnerable to a range of common web application attacks. The successful exploits detailed in this report serve as a practical illustration of why robust security measures—such as input validation, output encoding, prepared statements, CSRF tokens, and brute-force protections—are not just best practices, but essential requirements for any web application handling user data. Addressing these vulnerabilities is critical to preventing unauthorized access, data breaches, and other significant security incidents in a real-world environment.  
   
-  
+[Screenshots]()  
