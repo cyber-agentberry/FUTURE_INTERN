@@ -69,6 +69,10 @@ Whiteabyss_secure_file/
 - How encryption and integrity mechanisms like SHA-256 work in real applications.
 - Building secure and functional Flask applications.
 
+## Documented steps:
+(https://docs.google.com/document/d/1PLRwnPYFleCSkHkJIHrxzjNhIibtkuLR/edit?usp=share_link&ouid=113059741350382174257&rtpof=true&sd=true)
+
+
 ## Recommendations
 - Based on the experience and lessons learned, the following recommendations are suggested for improving the system in future versions:
 - **Implement Audit Logs**: Track and record every file access event (upload/download) with timestamps and user info to support accountability and incident investigation.
