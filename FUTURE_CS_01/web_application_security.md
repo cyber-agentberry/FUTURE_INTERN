@@ -230,4 +230,4 @@ The vulnerability assessment of the Damn Vulnerable Web Application (DVWA) at a 
 The findings highlight a direct correlation between weak security implementation and the ease of exploitation. The application's failure to sanitize user input, implement secure query practices, validate session tokens, or enforce rate limiting mechanisms made it trivial to compromise.  
 In summary, the DVWA platform, under its low-security configuration, is highly vulnerable to a range of common web application attacks. The successful exploits detailed in this report serve as a practical illustration of why robust security measures—such as input validation, output encoding, prepared statements, CSRF tokens, and brute-force protections—are not just best practices, but essential requirements for any web application handling user data. Addressing these vulnerabilities is critical to preventing unauthorized access, data breaches, and other significant security incidents in a real-world environment.  
   
-[Screenshots]()  
+[Screenshots](https://github.com/cyber-agentberry/FUTURE_INTERN/tree/fa943d0c224f3703ce3377331e2cb556ce516299/FUTURE_CS_01/Images)  
