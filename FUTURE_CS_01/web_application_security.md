@@ -59,10 +59,8 @@ Switching back to ZAP, it was confirmed that the interception was working proper
 The DVWA Security level was set to low and an active scan was carried out.  
   
    
-Figure 1: A Screenshot of Zap Interface showing the DVWA Scan Result  
+[Figure 1: A Screenshot of Zap Interface showing the DVWA Scan Result](https://github.com/cyber-agentberry/FUTURE_INTERN/blob/d4082f04a7c5eab4f9a1de4080e7b6ef2abb21c8/FUTURE_CS_01/Images/DvwaScan.png)
   
-  
-
 
 ## Vulnerability Analysis: Reflected Cross-Site Scripting (XSS)  
 Description:  
@@ -71,7 +69,12 @@ Execution Process:
 The payload was injected into the input field (e.g., “Message” or “Name”). o Upon submission, the payload was reflected in the web page’s HTML response without any sanitization or encoding. o The JavaScript alert executed as soon as the page loaded.  
   
    
-Figure 2: A Screenshot Showing XSS_r interface with the payload Result: o Upon execution of the code, there was an ‘Hello’ message. o This confirms the presence of a Reflected XSS vulnerability. o The root cause was the application rendering unsanitized user input directly in the page response.  
+Figure 2: A Screenshot Showing XSS_r interface with the payload Result
+
+## Result:
+- Upon execution of the code, there was an ‘Hello’ message.
+- This confirms the presence of a Reflected XSS vulnerability.
+- The root cause was the application rendering unsanitized user input directly in the page response.  
 
   	  
 ## Vulnerability: Stored Cross-Site Scripting (XSS)  Description:  
