@@ -51,6 +51,8 @@ The goal was to detect, analyze, and respond to simulated security incidents usi
 2. [View VirusTotal PDF report for IP 198.51.100.42](https://drive.google.com/file/d/1daV-bAX2dt03L4WjtzHqphHdQfCF4-0J/view?usp=share_link)
    [View VirusTotal PDF report for IP 203.0.113.77](https://drive.google.com/file/d/1NBdL31Hb0JC27xGmEXjZvxrBZfgSbFYG/view?usp=share_link)
 
+3. [Documented work](https://docs.google.com/document/d/1bDHTZMZ0o1AY3ssUdmn-epHzBInK6kVV/edit?usp=share_link&ouid=113059741350382174257&rtpof=true&sd=true)
+
 
   
 ## 6. Findings
